@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
@@ -17,6 +18,7 @@ import java.util.Date;
 public class AbschlussM223Application {
 
     @Bean
+    @Profile("dev")
     public ApplicationRunner runner(UserRepository userRepository, BookingRepository bookingRepository, StatusRepository statusRepository, RoleRepository roleRepository) {
         return args -> {
             createInitialData(userRepository, bookingRepository, statusRepository, roleRepository);
@@ -50,7 +52,7 @@ public class AbschlussM223Application {
         booking.setRentTime(RentTime.FULL_DAY);
         booking.setUser(user);
         bookingRepository.save(booking);
-        
+
     }
 
     public static void main(String[] args) {
