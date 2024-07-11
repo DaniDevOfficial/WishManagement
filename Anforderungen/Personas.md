@@ -19,10 +19,10 @@ Lakshana nutzt den Coworking Space, um die Bedürfnisse der Mitglieder zu verste
 **Bild:** ![Bild von Leonita](../assets/Leonita.png)  
 
 **Berufliche Tätigkeit:**  
-Sarah ist freiberufliche Grafikdesignerin. Sie arbeitet an verschiedenen Projekten für Kunden aus verschiedenen Branchen und benötigt einen flexiblen Arbeitsplatz.
+Léonita ist freiberufliche Grafikdesignerin. Sie arbeitet an verschiedenen Projekten für Kunden aus verschiedenen Branchen und benötigt einen flexiblen Arbeitsplatz.
 
 **Gründe für die Nutzung des Coworking Spaces:**  
-Sarah nutzt den Coworking Space, um Zugang zu professioneller Infrastruktur zu haben, wie schnelle Internetverbindung, Konferenzräume und Netzwerkmöglichkeiten mit anderen Freiberuflern. Sie schätzt die Flexibilität, halbe oder ganze Tage zu buchen, je nach ihren Projektanforderungen.
+Léonita nutzt den Coworking Space, um Zugang zu professioneller Infrastruktur zu haben, wie schnelle Internetverbindung, Konferenzräume und Netzwerkmöglichkeiten mit anderen Freiberuflern. Sie schätzt die Flexibilität, halbe oder ganze Tage zu buchen, je nach ihren Projektanforderungen.
 
 ### 3. Besucher Persona
 

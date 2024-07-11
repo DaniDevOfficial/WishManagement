@@ -2,6 +2,7 @@ package com.example.abschlussm223.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -10,6 +11,7 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Booking {
 
     @Id
@@ -19,7 +21,7 @@ public class Booking {
     private Date datum;
 
     @Enumerated(EnumType.STRING)
-    private RentTime mietZeit;
+    private RentTime rentTime;
 
     @ManyToOne
     @JoinColumn(name = "statusId")
@@ -28,4 +30,5 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "userId")
     private User user;
+
 }

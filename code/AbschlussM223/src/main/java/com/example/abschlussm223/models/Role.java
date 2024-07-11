@@ -2,35 +2,24 @@ package com.example.abschlussm223.models;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rolleId;
+    private Long roleId;
 
-    private String rollenName;
+    private String roleName;
 
-    // Getter und Setter Methoden
-
-    public Long getRolleId() {
-        return rolleId;
+    public Role(String roleName) {
+        this.roleName = roleName;
     }
-
-    public void setRolleId(Long rolleId) {
-        this.rolleId = rolleId;
-    }
-
-    public String getRollenName() {
-        return rollenName;
-    }
-
-    public void setRollenName(String rollenName) {
-        this.rollenName = rollenName;
-    }
- }
+}

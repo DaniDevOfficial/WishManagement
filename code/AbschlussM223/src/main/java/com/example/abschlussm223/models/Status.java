@@ -3,6 +3,7 @@ package com.example.abschlussm223.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -14,32 +15,15 @@ public class Status {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long statusId;
 
-    private boolean bezahlt;
+    private boolean paid;
 
     @Enumerated(EnumType.STRING)
-    private Fulfilled erfüllung;
+    private Fulfilled fulfilled;
 
-    public Long getStatusId() {
-        return statusId;
-    }
 
-    public void setStatusId(Long statusId) {
-        this.statusId = statusId;
-    }
 
-    public boolean isBezahlt() {
-        return bezahlt;
-    }
-
-    public void setBezahlt(boolean bezahlt) {
-        this.bezahlt = bezahlt;
-    }
-
-    public Fulfilled getErfüllung() {
-        return erfüllung;
-    }
-
-    public void setErfüllung(Fulfilled erfüllung) {
-        this.erfüllung = erfüllung;
+    public Status(boolean paid, Fulfilled fulfilled) {
+        this.paid = paid;
+        this.fulfilled = fulfilled;
     }
 }

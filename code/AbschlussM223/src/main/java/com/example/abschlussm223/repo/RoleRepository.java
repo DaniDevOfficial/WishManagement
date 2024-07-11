@@ -1,6 +1,6 @@
 package com.example.abschlussm223.repo;
 
-import com.example.abschlussm223.models.Rolle;
+import com.example.abschlussm223.models.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RolleRepository extends JpaRepository<Rolle, Long> {}
+public interface RoleRepository extends JpaRepository<Role, Long> {}

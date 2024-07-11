@@ -1,3 +1,4 @@
+ChatGPT hat mit strukturierung und gramatischer Verbesserung geholfen.
 
 ### A. Drei zusätzliche, einzigartige, funktionale Anforderungen (User Stories)
 
