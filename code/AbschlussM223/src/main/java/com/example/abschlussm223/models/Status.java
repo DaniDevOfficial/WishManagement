@@ -2,8 +2,12 @@ package com.example.abschlussm223.models;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Status {
 
     @Id
@@ -13,7 +17,7 @@ public class Status {
     private boolean bezahlt;
 
     @Enumerated(EnumType.STRING)
-    private Erfüllung erfüllung;
+    private Fulfilled erfüllung;
 
     public Long getStatusId() {
         return statusId;
@@ -31,11 +35,11 @@ public class Status {
         this.bezahlt = bezahlt;
     }
 
-    public Erfüllung getErfüllung() {
+    public Fulfilled getErfüllung() {
         return erfüllung;
     }
 
-    public void setErfüllung(Erfüllung erfüllung) {
+    public void setErfüllung(Fulfilled erfüllung) {
         this.erfüllung = erfüllung;
     }
 }

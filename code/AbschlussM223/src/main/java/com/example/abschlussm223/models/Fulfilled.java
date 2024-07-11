@@ -1,8 +1,8 @@
 package com.example.abschlussm223.models;
 
-public enum Erfüllung {
+public enum Fulfilled {
     NULL,
-    STORNIERT,
-    ERFÜLLT
+    CANCLED,
+    FULLFILLED
 }
 
