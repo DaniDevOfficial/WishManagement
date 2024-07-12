@@ -120,7 +120,7 @@ Das Persistenzdiagram zeigt die login Funktion und wie das ganze genau funktioni
 
 Das Klassendiagramm zeigt die Beziehungen zwischen den Klassen und wie sie miteinander interagieren.
 
-![Klassendiagramm](./assets/Classdiagram.png)
+![Klassendiagramm](./assets/Classdiagramm.png)
 
 
 ## Schnittstellen

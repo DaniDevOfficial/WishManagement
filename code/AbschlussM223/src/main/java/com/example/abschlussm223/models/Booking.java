@@ -18,14 +18,14 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long buchungId;
 
-    private Date datum;
+    private Date date;
 
     @Enumerated(EnumType.STRING)
     private RentTime rentTime;
 
-    @ManyToOne
-    @JoinColumn(name = "statusId")
-    private Status status;
+    private Fulfilled fulfilled;
+
+    private boolean paid;
 
     @ManyToOne
     @JoinColumn(name = "userId")

@@ -2,10 +2,12 @@ package com.example.abschlussm223.controller;
 
 import com.example.abschlussm223.models.User;
 import com.example.abschlussm223.services.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,6 +18,11 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
+    @Operation(summary = "Register a new user", description = "Register a new user with the given email and password",
+        tags = {"user"},responses = {
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "201", description = "User registered successfully"),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Invalid input"),
+    })
     public ResponseEntity<String> registerUser(@Valid @RequestBody User user) {
         try {
             userService.registerUser(user);
@@ -26,6 +33,12 @@ public class UserController {
     }
 
     @PostMapping("/login")
+    @Operation(summary = "Authenticate a user", description = "Authenticate a user with the given email and password",
+        tags = {"user"},responses = {
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "User authenticated successfully"),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "401", description = "Invalid email or password"),
+    })
+
     public ResponseEntity<String> authenticateUser(@Valid @RequestBody User loginRequest) {
         if (userService.authenticateUser(loginRequest)) {
             return new ResponseEntity<>("User authenticated successfully", HttpStatus.OK);

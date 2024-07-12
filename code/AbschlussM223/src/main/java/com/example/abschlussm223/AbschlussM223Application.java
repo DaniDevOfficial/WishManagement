@@ -3,7 +3,6 @@ package com.example.abschlussm223;
 import com.example.abschlussm223.models.*;
 import com.example.abschlussm223.repo.BookingRepository;
 import com.example.abschlussm223.repo.RoleRepository;
-import com.example.abschlussm223.repo.StatusRepository;
 import com.example.abschlussm223.repo.UserRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,14 +18,14 @@ public class AbschlussM223Application {
 
     @Bean
     @Profile("dev")
-    public ApplicationRunner runner(UserRepository userRepository, BookingRepository bookingRepository, StatusRepository statusRepository, RoleRepository roleRepository) {
+    public ApplicationRunner runner(UserRepository userRepository, BookingRepository bookingRepository, RoleRepository roleRepository) {
         return args -> {
-            createInitialData(userRepository, bookingRepository, statusRepository, roleRepository);
+            createInitialData(userRepository, bookingRepository, roleRepository);
         };
     }
 
     @Transactional
-    public void createInitialData(UserRepository userRepository, BookingRepository bookingRepository, StatusRepository statusRepository, RoleRepository roleRepository) {
+    public void createInitialData(UserRepository userRepository, BookingRepository bookingRepository, RoleRepository roleRepository) {
         // Create and save a new role
         Role role = new Role();
         role.setName("Visitor");
@@ -41,14 +40,12 @@ public class AbschlussM223Application {
         user.setPassword("admin");
         userRepository.save(user);
 
-        // Create and save a new status
-        Status status = new Status(true, Fulfilled.FULLFILLED);
-        statusRepository.save(status);
 
 // Create and save a new booking
         Booking booking = new Booking();
-        booking.setDatum(new Date());
-        booking.setStatus(status);
+        booking.setDate(new Date());
+        booking.setPaid(false);
+        booking.setFulfilled(Fulfilled.FULLFILLED);
         booking.setRentTime(RentTime.FULL_DAY);
         booking.setUser(user);
         bookingRepository.save(booking);
