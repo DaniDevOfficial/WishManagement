@@ -29,7 +29,7 @@ public class AbschlussM223Application {
     public void createInitialData(UserRepository userRepository, BookingRepository bookingRepository, StatusRepository statusRepository, RoleRepository roleRepository) {
         // Create and save a new role
         Role role = new Role();
-        role.setRoleName("Admin");
+        role.setName("Visitor");
         roleRepository.save(role);
 
         // Create and save a new user
