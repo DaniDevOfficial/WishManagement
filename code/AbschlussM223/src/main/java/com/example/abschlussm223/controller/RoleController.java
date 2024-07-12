@@ -1,6 +1,7 @@
 package com.example.abschlussm223.controller;
+
 import com.example.abschlussm223.models.Role;
-import com.example.abschlussm223.repo.RoleRepository;
+import com.example.abschlussm223.services.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,14 +12,15 @@ import org.springframework.web.bind.annotation.*;
 public class RoleController {
 
     @Autowired
-    private RoleRepository roleRepository;
+    private RoleService roleService;
 
     @PostMapping("/create")
     public ResponseEntity<Role> createRole(@RequestBody Role role) {
-        if (roleRepository.findByName(role.getName()).isPresent()) {
+        try {
+            Role savedRole = roleService.createRole(role);
+            return new ResponseEntity<>(savedRole, HttpStatus.CREATED);
+        } catch (IllegalStateException e) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
-        Role savedRole = roleRepository.save(role);
-        return new ResponseEntity<>(savedRole, HttpStatus.CREATED);
     }
 }
