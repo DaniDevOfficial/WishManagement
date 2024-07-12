@@ -58,7 +58,7 @@ public class UserController {
         return new ResponseEntity<>(savedUser, HttpStatus.OK);
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     @Operation(summary = "Delete a user", description = "Delete a user with the given data",
         tags = {"user"},responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "User deleted successfully"),
