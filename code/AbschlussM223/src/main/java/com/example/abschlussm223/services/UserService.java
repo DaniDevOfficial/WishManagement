@@ -42,4 +42,10 @@ public class UserService {
         }
         return false;
     }
+
+
+    // Now admin things
+
+    
+
 }

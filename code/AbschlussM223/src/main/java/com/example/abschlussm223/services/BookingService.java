@@ -12,14 +12,21 @@ public class BookingService {
     @Autowired
     private BookingRepository bookingRepository;
 
-// Add a method to create a booking
     public Booking createBooking(Booking booking) {
         return bookingRepository.save(booking);
     }
 
-// Add a method to delete a booking
     public Booking deleteBooking(Booking booking) {
         bookingRepository.deleteById(booking.getBookingId());
         return booking;
+    }
+
+    public Booking cancelBooking(Booking booking) {
+        booking.setFulfilled(Fulfilled.CANCLED);
+        return bookingRepository.save(booking);
+    }
+
+    public Booking getBookingById(Long id) {
+        return bookingRepository.findById(id).orElse(null);
     }
 }

@@ -41,4 +41,26 @@ public class BookingController {
         return new ResponseEntity<>(savedBooking, HttpStatus.OK);
     }
 
+    @PostMapping("/cancel")
+    @Operation(summary = "Cancel a booking", description = "Cancel a booking with the given data",
+        tags = {"booking"},responses = {
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "Booking canceled successfully"),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Bad Request"),
+    })
+    public ResponseEntity<Booking> cancelBooking(@RequestBody Booking booking) {
+        Booking savedBooking = bookingService.cancelBooking(booking);
+        return new ResponseEntity<>(savedBooking, HttpStatus.OK);
+    }
+    @PostMapping("/get")
+    @Operation(summary = "Get a booking by id", description = "Get a booking by id",
+        tags = {"booking"},responses = {
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "Booking found"),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Bad Request"),
+    })
+    public ResponseEntity<Booking> getBooking(@RequestBody Booking booking) {
+        Booking savedBooking = bookingService.getBookingById(booking.getBookingId());
+        return new ResponseEntity<>(savedBooking, HttpStatus.OK);
+    }
+
+
 }
