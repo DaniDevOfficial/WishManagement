@@ -16,4 +16,10 @@ public class BookingService {
     public Booking createBooking(Booking booking) {
         return bookingRepository.save(booking);
     }
+
+// Add a method to delete a booking
+    public Booking deleteBooking(Booking booking) {
+        bookingRepository.deleteById(booking.getBookingId());
+        return booking;
+    }
 }
