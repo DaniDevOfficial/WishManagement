@@ -46,6 +46,22 @@ public class UserService {
 
     // Now admin things
 
-    
+    public User updateUser(User user) {
+        Optional<User> existingUser = userRepository.findByEmail(user.getEmail());
+        if (existingUser.isPresent()) {
+            return userRepository.save(user);
+        }
+        throw new IllegalStateException("User not found");
+    }
+
+    // delete user
+    public User deleteUser(Long userId) {
+        Optional<User> existingUser = userRepository.findById(userId);
+        User user = existingUser.orElse(null);
+        if (existingUser.isPresent()) {
+            userRepository.delete(user);
+        }
+        throw new IllegalStateException("User not found");
+    }
 
 }
