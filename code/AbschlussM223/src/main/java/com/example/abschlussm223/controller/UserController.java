@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
@@ -47,25 +47,25 @@ public class UserController {
     }
 
     // admin routes
-    @PostMapping("/update")
+    @PutMapping("/update")
     @Operation(summary = "Update a user", description = "Update a user with the given data",
         tags = {"user"},responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "User updated successfully"),
         @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Bad Request"),
     })
-    public ResponseEntity<User> updateUser(@RequestBody User user) {
-        User savedUser = userService.updateUser(user);
-        return new ResponseEntity<>(savedUser, HttpStatus.OK);
+    public ResponseEntity<String> updateUser(@RequestBody User user) {
+        String res = userService.updateUser(user);
+        return new ResponseEntity<>(res, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/{id}")
     @Operation(summary = "Delete a user", description = "Delete a user with the given data",
         tags = {"user"},responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "User deleted successfully"),
         @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Bad Request"),
     })
-    public ResponseEntity<User> deleteUser(@RequestBody Long userId) {
-        User deletedUser = userService.deleteUser(userId);
-        return new ResponseEntity<>(deletedUser, HttpStatus.OK);
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        String res = userService.deleteUser(id);
+        return new ResponseEntity<>(res, HttpStatus.OK);
     }
 }

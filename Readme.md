@@ -130,3 +130,13 @@ Die Schnittstellenplanung zeigt die Endpunkte der API und wie sie verwendet werd
 [Schnittstellenplanung](./Anforderungen/Schnitstellen.md)
 
 
+
+## Swagger 
+
+![Swagger](./assets/swagger.png)
+
+Die API kann auch über Swagger erreicht werden.
+
+## Postman
+
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/27955045-9cbb320d-43fb-4379-a41d-98911062402f?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D27955045-9cbb320d-43fb-4379-a41d-98911062402f%26entityType%3Dcollection%26workspaceId%3D582dfada-5bb9-45e7-b627-8791289ac85f)

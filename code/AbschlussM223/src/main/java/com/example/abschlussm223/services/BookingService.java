@@ -16,12 +16,18 @@ public class BookingService {
         return bookingRepository.save(booking);
     }
 
-    public Booking deleteBooking(Booking booking) {
-        bookingRepository.deleteById(booking.getBookingId());
-        return booking;
+    public String deleteBooking(Long bookingId) {
+        if (!bookingRepository.existsById(bookingId)) {
+            return ("Booking not found");
+        }
+        bookingRepository.deleteById(bookingId);
+
+        return "Booking deleted successfully";
     }
 
-    public Booking cancelBooking(Booking booking) {
+    public Booking cancelBooking(Long bookingId) {
+        Booking booking = bookingRepository.findById(bookingId).
+                orElseThrow(() -> new IllegalStateException("Booking not found"));
         booking.setFulfilled(Fulfilled.CANCLED);
         return bookingRepository.save(booking);
     }

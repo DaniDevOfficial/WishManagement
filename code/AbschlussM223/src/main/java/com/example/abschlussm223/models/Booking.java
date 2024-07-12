@@ -23,6 +23,7 @@ public class Booking {
     @Enumerated(EnumType.STRING)
     private RentTime rentTime;
 
+    @Enumerated(EnumType.STRING)
     private Fulfilled fulfilled;
 
     private boolean paid;

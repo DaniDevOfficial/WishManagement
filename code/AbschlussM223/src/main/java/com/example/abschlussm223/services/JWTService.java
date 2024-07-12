@@ -1,3 +1,4 @@
+/*
 package com.example.abschlussm223.services;
 
 import io.jsonwebtoken.Jwts;
@@ -27,4 +28,7 @@ public class JwtService {
         } catch (Exception e) {
             return false;
         }
+
+
 }
+*/
