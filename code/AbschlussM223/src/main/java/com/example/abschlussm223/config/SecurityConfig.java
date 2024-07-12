@@ -36,7 +36,6 @@ public class SecurityConfig {
     public String hashPassword(String password) {
         return passwordEncoder().encode(password);
     }
-
     // password comparator
 
     public boolean comparePasswords(String password, String hashedPassword) {

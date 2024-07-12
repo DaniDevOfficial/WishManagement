@@ -17,6 +17,7 @@ public class BookingController {
 
 
     @PostMapping("/")
+    // initial swagger doc helped by ChatGPT
     @Operation(summary = "Create a new booking", description = "Create a new booking with the given data",
         tags = {"booking"},responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "201", description = "Booking created successfully"),
