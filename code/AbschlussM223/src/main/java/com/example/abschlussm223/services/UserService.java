@@ -54,7 +54,6 @@ public class UserService {
         }
         return ("User not found");
     }
-
     // delete user
     public String deleteUser(Long userId) {
         Optional<User> existingUser = userRepository.findById(userId);

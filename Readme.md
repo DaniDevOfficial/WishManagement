@@ -47,7 +47,7 @@ Die Datenbank kann mit dem Befehl `docker-compose up` gestartet werden.
 docker-compose up
 ```
 
-Das läuft über den Port `3306` und kann mit dem User `root` und dem Passwort `root` in phpmyadmin erreicht werden.
+Das läuft über den Port `3306` und kann mit dem User `root` und dem Passwort `bbw123` in phpmyadmin erreicht werden.
 
 
 # Testdaten
@@ -140,3 +140,5 @@ Die API kann auch über Swagger erreicht werden.
 ## Postman
 
 [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/27955045-9cbb320d-43fb-4379-a41d-98911062402f?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D27955045-9cbb320d-43fb-4379-a41d-98911062402f%26entityType%3Dcollection%26workspaceId%3D582dfada-5bb9-45e7-b627-8791289ac85f)
+
+Die API kann auch über Postman erreicht werden.
